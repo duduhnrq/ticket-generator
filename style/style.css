@@ -29,7 +29,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font001);
-
     background: var(--color001) url(../images/waves-bg2.svg) no-repeat center center;
     background-size: cover;
     color: white;
