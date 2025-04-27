@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tiny5&display=swap');
+
+/*Global styles*/
+
+:root {
+    --color001: #2f282f;
+    --color002: #1f1d1f;
+    --color003: #72e9b2;
+    --color004: #13DF80;
+    --color005: #22BA73;
+    --color006: #095E37;
+    --color007: #6961698f;
+    --color008: #c2b7c2;
+    --color009: #4e494e8f;
+    
+
+    --font001: "Poppins", sans-serif;
+    --font002: "Tiny5", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font001);
+    background-color: var(--color001);
+    color: white;
+}
+
+/*Header*/
+
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: white;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+}
+
+.logo img {
+    width: 50px;
+}
+
+.logo span {
+    font-family: var(--font002);
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+/*Main*/
+
+main {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+/*Titles*/
+
+.titles-container {
+    text-align: center;
+}
+
+.titles-container h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0;
+}
+
+.titles-container h2 {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #757575;
+    margin-bottom: 30px;
+}
+
+/*Form*/
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    padding: 20px;
+    background-color: var(--color002);
+    border-radius: 10px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--font001);
+}
+
+.upload-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.upload-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: .5rem;
+    width: 100%;
+    height: 100px;
+    border: 2px dashed var(--color008);
+    border-radius: 10px;
+    background-color: var(--color007);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.upload-box:hover {
+    background-color: var(--color009);
+    border-color: var(--color005);
+}
+
+.upload-box span {
+    font-size: .8rem;
+    font-weight: 400;
+    color: var(--color008);
+}
+
+.upload-group input[type="file"] {
+    display: none;
+}
+
+.upload-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color007);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #757175;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.upload-icon img {
+    filter: brightness(0) saturate(100%) invert(65%) sepia(19%) saturate(1768%) hue-rotate(100deg) brightness(90%) contrast(78%);
+}
+
+.hint-text {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.hint-text p {
+    margin: 0;
+    font-size: .5rem;
+    font-weight: 400;
+    color: var(--color008);
+}
+
+.hint-text img {;
+    margin-right: 5px;
+    filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(276%) hue-rotate(251deg) brightness(95%) contrast(87%);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: .5rem;
+}
+
+.input-group input {
+    padding: 12px;
+    border: 1px solid var(--color008);
+    border-radius: 10px;
+    background-color: var(--color007);
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all .3s ease-in-out;
+}
+
+.input-group input:focus {
+    outline: none;
+    background-color: var(--color009);
+    border-color: var(--color005);
+}
+
+.form-group button {
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color005);
+    color: white;
+    font-family: var(--font001);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.form-group button:hover {
+    background-color: var(--color006);
+}

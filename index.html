@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DevConnect 2025 | Ticket</title>
+    <title>MangueTech 2025 | Ticket</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style/style.css">
 </head>
@@ -11,29 +11,45 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <img src="images/logo.png" alt="DevConnect 2025 Logo">
-                <span>DevConnect</span>
+                <img src="images/mangue.png" alt="MangueTech 2025 Logo">
+                <span>MangueTech</span>
             </div>
     </header>
 
     <main>
         <div class="titles-container">
-            <h1>Your Journey to DevConnect 2025 Starts Here!</h1>
-            <h2>Secure your spot at the biggest coding conference.</h2>
+            <h1>Sua Jornada para o MangueTech 2025 Começa Aqui!</h1>
+            <h2>Garanta seu lugar na maior conferência Tech do Brasil.</h2>
         </div>
 
         <div class="form-container">
             <form>
                 <div class="form-group">
-                    <label for="avatar">Upload Avatar</label>
-                    <input type="file" id="avatar" name="avatar" accept="image/*" required>
-                    <span>Upload your photo (JPG or PNG, max size: 500KB).</span>
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                    <label for="email">E-mail Address</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="github">GitHub Username</label>
-                    <input type="text" id="github" name="github" required>
+                    <label for="avatar">Carregar Avatar</label>
+                    <div class="upload-group">
+                        <label class="upload-box">
+                            <div class="upload-icon"><img src="images/upload.png" alt="Upload Icon" width="40"></div>
+                            <span>Arraste e solte ou clique para fazer upload.</span>
+                            <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" required>
+                        </label>
+                        <div class="hint-text">
+                            <img src="images/info.png" alt="info-icon" width="10">
+                            <p>Carregue sua foto (JPG ou PNG, tamanho máximo: 500 KB).</p>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label for="name">Nome Completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="email">Endereço de E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="github">Nome de Usuário do GitHub</label>
+                        <input type="text" id="github" name="github" required>
+                    </div>
+                    <button id="generate-btn">Gerar meu Ticket</button>
                 </div>
             </form>
         </div>
