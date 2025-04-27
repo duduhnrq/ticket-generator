@@ -6,7 +6,7 @@
 
 :root {
     --color001: #2f282f;
-    --color002: #1f1d1f;
+    --color002: #1f1d1fa8;
     --color003: #72e9b2;
     --color004: #13DF80;
     --color005: #22BA73;
@@ -29,7 +29,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--font001);
-    background-color: var(--color001);
+
+    background: var(--color001) url(../images/waves-bg2.svg) no-repeat center center;
+    background-size: cover;
     color: white;
 }
 
@@ -99,7 +101,7 @@ main {
     align-items: center;
     width: 60%;
     padding: 20px;
-    background-color: var(--color002);
+    background-color: #1f1d1fa8;
     border-radius: 10px;
 }
 
@@ -182,7 +184,7 @@ main {
     color: var(--color008);
 }
 
-.hint-text img {;
+.hint-text img {
     margin-right: 5px;
     filter: brightness(0) saturate(100%) invert(79%) sepia(8%) saturate(276%) hue-rotate(251deg) brightness(95%) contrast(87%);
 }
@@ -213,7 +215,7 @@ main {
 
 .form-group button {
     padding: 15px;
-    margin-top: 10px;
+    margin: 10px 0 10px 0;
     border: none;
     border-radius: 10px;
     background-color: var(--color005);
@@ -227,4 +229,15 @@ main {
 
 .form-group button:hover {
     background-color: var(--color006);
+}
+
+/*Footer*/
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+    color: white;
 }
