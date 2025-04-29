@@ -14,6 +14,7 @@
     --color007: #6961698f;
     --color008: #c2b7c2;
     --color009: #4e494e8f;
+    --color010: #b91515;
     
 
     --font001: "Poppins", sans-serif;
@@ -178,7 +179,7 @@ main {
 
 .hint-text p {
     margin: 0;
-    font-size: .5rem;
+    font-size: .6rem;
     font-weight: 400;
     color: var(--color008);
 }
@@ -210,6 +211,16 @@ main {
     outline: none;
     background-color: var(--color009);
     border-color: var(--color005);
+}
+
+.input-group input.error {
+    border-color: var(--color010);
+}
+
+.input-group small {
+    font-size: .6rem;
+    font-weight: 400;
+    color: var(--color010);
 }
 
 .form-group button {

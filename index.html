@@ -28,26 +28,32 @@
                     <label for="avatar">Carregar Avatar</label>
                     <div class="upload-group">
                         <label class="upload-box">
-                            <div class="upload-icon"><img src="images/upload.png" alt="Upload Icon" width="40"></div>
+                            <div class="upload-icon">
+                                <img src="images/upload.png" alt="Upload Icon" width="40">
+                            </div>
                             <span>Arraste e solte ou clique para fazer upload.</span>
                             <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" required>
                         </label>
-                        <div class="hint-text">
+                        
+                        <div class="hint-text" id="avatar-hint">
                             <img src="images/info.png" alt="info-icon" width="10">
                             <p>Carregue sua foto (JPG ou PNG, tamanho máximo: 500 KB).</p>
                         </div>
                     </div>
                     <div class="input-group">
-                        <label for="name">Nome Completo</label>
+                        <label for="name">Nome e Sobrenome</label>
                         <input type="text" id="name" name="name" required>
+                        <small id="name-error"></small>
                     </div>
                     <div class="input-group">
                         <label for="email">Endereço de E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="text" id="email" name="email" required>
+                        <small id="email-error"></small>
                     </div>
                     <div class="input-group">
                         <label for="github">Nome de Usuário do GitHub</label>
                         <input type="text" id="github" name="github" required>
+                        <small id="github-error"></small>
                     </div>
                     <button id="generate-btn">Gerar meu Ticket</button>
                 </div>
@@ -56,7 +62,9 @@
     </main>
 
     <footer>
-        
+
     </footer>
+
+    <script src="script/script.js"></script>
 </body>
 </html>
