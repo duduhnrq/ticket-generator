@@ -97,6 +97,14 @@ function validateAvatar() {
 // Arrastar e soltar o arquivo
 
 const uploadBox = document.querySelector('.upload-box');
+const uploadText = document.querySelector('.upload-text');
+const uploadIcon = document.querySelector('.upload-icon');
+
+uploadBox.addEventListener('click', () => {
+    if (!avatarInput.files || avatarInput.files.length === 0) {
+        avatarInput.click();
+    }
+});
 
 uploadBox.addEventListener('dragover', function(event) {
     event.preventDefault();
@@ -113,3 +121,46 @@ uploadBox.addEventListener('drop', function(event) {
         avatarInput.files = dataTransfer.files;
     }
 });
+
+// Atualizar visual da área de upload
+
+function removeImageHandler() {
+    avatarInput.value = '';
+    uploadIcon.innerHTML = '<img class="upload-icon-img" src="images/upload.png" alt="Upload Icon" width="40">';
+    uploadText.style.display = 'block';
+    actionsDiv.style.display = 'none';
+}
+
+function changeImageHandler() {
+    avatarInput.click();
+}
+
+const actionsDiv = document.getElementById('upload-actions');
+const removeButton = actionsDiv.querySelector('.preview-button:nth-child(1)');
+const changeButton = actionsDiv.querySelector('.preview-button:nth-child(2)');
+
+avatarInput.addEventListener('change', function() {
+    const files = avatarInput.files;
+    
+    if (files && files[0]) {
+        const file = files[0];
+        
+        if (file.type === 'image/jpeg' || file.type === 'image/png') {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                uploadIcon.innerHTML = `<img src="${e.target.result}" alt="Preview" class="preview-image" width="40" height="40">`;
+                uploadText.style.display = 'none';
+                
+                actionsDiv.style.display = 'flex';
+                removeButton.style.display = 'block';
+                changeButton.style.display = 'block';
+            };
+            
+            reader.readAsDataURL(file);
+        }
+    }
+});
+
+removeButton.addEventListener('click', removeImageHandler);
+changeButton.addEventListener('click', removeImageHandler);

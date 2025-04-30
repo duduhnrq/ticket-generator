@@ -27,35 +27,50 @@
                 <div class="form-group">
                     <label for="avatar">Carregar Avatar</label>
                     <div class="upload-group">
-                        <label class="upload-box">
-                            <div class="upload-icon">
-                                <img src="images/upload.png" alt="Upload Icon" width="40">
-                            </div>
-                            <span>Arraste e solte ou clique para fazer upload.</span>
+                        <div class="upload-box">
+                            <label for="avatar" class="upload-label">
+                                <div class="upload-icon">
+                                    <img class="upload-icon-img" src="images/upload.png" alt="Upload Icon" width="40">
+                                </div>
+                                <span class="upload-text">Arraste e solte ou clique para fazer upload.</span>
+                            </label>
+
                             <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" required>
-                        </label>
+
+                            <div class="actions-div" id="upload-actions">
+                                <button class="preview-button" id="remove-avatar" onclick="removeImage()">Remover</button>
+                                <button class="preview-button" id="change-avatar" onclick="editImage()">Editar</button>
+                            </div>
+                        </div>
                         
                         <div class="hint-text" id="avatar-hint">
                             <img src="images/info.png" alt="info-icon" width="10">
-                            <p>Carregue sua foto (JPG ou PNG, tamanho máximo: 500 KB).</p>
+                            <p>Carregue sua foto (JPG ou PNG, tamanho máximo: 2 MB).</p>
                         </div>
                     </div>
+
                     <div class="input-group">
                         <label for="name">Nome e Sobrenome</label>
                         <input type="text" id="name" name="name" required>
                         <small id="name-error"></small>
                     </div>
+
                     <div class="input-group">
                         <label for="email">Endereço de E-mail</label>
                         <input type="text" id="email" name="email" required>
                         <small id="email-error"></small>
                     </div>
+
                     <div class="input-group">
                         <label for="github">Nome de Usuário do GitHub</label>
-                        <input type="text" id="github" name="github" required>
+                        <div class="input-wrapper">
+                            <span class="input-prefix">@</span>
+                            <input type="text" id="github" name="github" required>
+                        </div>
                         <small id="github-error"></small>
                     </div>
-                    <button id="generate-btn">Gerar meu Ticket</button>
+                    
+                    <button class="generate-button" id="generate-btn">Gerar meu Ticket</button>
                 </div>
             </form>
         </div>
