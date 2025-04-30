@@ -187,3 +187,32 @@ changeButton.addEventListener('click', function() { // Adiciona o evento de cliq
     e.preventDefault();
     editImage();
 });
+
+// Envio do formulário e geração do ticket
+
+const form = document.getElementById('form-container');
+const generateButton = document.getElementById('generate-btn');
+
+generateButton.addEventListener('click', function(e) { // Adiciona o evento de clique para gerar o ticket
+    e.preventDefault(); // Previne o comportamento padrão do botão
+
+    const avatarFile = avatarInput.files[0];
+    const name = nameInput.value.trim();
+    const username = usernameInput.value.trim();
+
+    form.style.display = 'none'; // Esconde o formulário
+
+    const ticketContainer = document.getElementById('ticket-container');
+
+    ticketContainer.style.display = 'flex'; // Exibe o container do ticket
+
+    const avatarTicket = document.getElementById('avatar-ticket');
+    const nameTicket = document.getElementById('name-ticket');
+    const usernameTicket = document.getElementById('github-ticket');
+    const downloadButton = document.getElementById('download-btn');
+
+    avatarTicket.src = URL.createObjectURL(avatarFile); // Cria um URL para o arquivo de imagem
+    nameTicket.textContent = name; // Adiciona o nome ao ticket
+    usernameTicket.textContent = username; // Adiciona o nome de usuário ao ticket
+    
+});
