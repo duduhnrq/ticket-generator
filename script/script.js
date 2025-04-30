@@ -100,11 +100,13 @@ const uploadBox = document.querySelector('.upload-box');
 const uploadText = document.querySelector('.upload-text');
 const uploadIcon = document.querySelector('.upload-icon');
 
-uploadBox.addEventListener('click', () => {
+function handleUploadBoxClick() {
     if (!avatarInput.files || avatarInput.files.length === 0) {
         avatarInput.click();
     }
-});
+};
+
+uploadBox.addEventListener('click', handleUploadBoxClick);
 
 uploadBox.addEventListener('dragover', function(event) {
     event.preventDefault();
@@ -124,14 +126,17 @@ uploadBox.addEventListener('drop', function(event) {
 
 // Atualizar visual da área de upload
 
-function removeImageHandler() {
+function removeImage() {
     avatarInput.value = '';
     uploadIcon.innerHTML = '<img class="upload-icon-img" src="images/upload.png" alt="Upload Icon" width="40">';
     uploadText.style.display = 'block';
     actionsDiv.style.display = 'none';
+
+    uploadBox.classList.remove('active');
+    uploadBox.addEventListener('click', handleUploadBoxClick);
 }
 
-function changeImageHandler() {
+function editImage() {
     avatarInput.click();
 }
 
@@ -158,6 +163,9 @@ avatarInput.addEventListener('change', function() {
             };
             
             reader.readAsDataURL(file);
+
+            uploadBox.removeEventListener('click', handleUploadBoxClick);
+            uploadBox.classList.add('active');
         }
     }
 });

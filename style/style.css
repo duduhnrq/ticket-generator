@@ -146,6 +146,12 @@ main {
     border-color: var(--color005);
 }
 
+.upload-box.active:hover {
+    background-color: var(--color007);
+    border-color: var(--color008);
+    cursor: default;
+}
+
 .upload-box span {
     font-size: .8rem;
     font-weight: 400;
