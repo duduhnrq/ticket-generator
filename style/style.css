@@ -33,6 +33,8 @@ body {
     background: var(--color001) url(../images/waves-bg2.svg) no-repeat center center;
     background-size: cover;
     color: white;
+    width: 100%;
+    height: 100vh;
 }
 
 /*Header*/
@@ -95,7 +97,7 @@ main {
 /*Form*/
 
 .form-container {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -103,6 +105,10 @@ main {
     padding: 20px;
     background-color: #1f1d1fa8;
     border-radius: 10px;
+}
+
+form {
+    width: 100%;
 }
 
 .form-group {
@@ -286,7 +292,6 @@ main {
 
 .form-group .generate-button {
     padding: 15px;
-    margin: 10px 0 10px 0;
     border: none;
     border-radius: 10px;
     background-color: var(--color005);
@@ -302,6 +307,20 @@ main {
     background-color: var(--color006);
 }
 
+/*Ticket*/
+
+.ticket-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: var(--color002);
+    padding: 20px;
+}
+
+
+
 /*Footer*/
 
 footer {
@@ -309,6 +328,5 @@ footer {
     justify-content: center;
     align-items: center;
     padding: 20px;
-
     color: white;
 }
