@@ -3,11 +3,13 @@
 const emailInput = document.getElementById('email');
 const emailError = document.getElementById('email-error');
 
-function validateEmail() {
+function validateEmail() { // Valida o email inserido pelo usuário
     const emailValue = emailInput.value.trim();
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    // O email deve conter um formato válido
     
-    if (!emailPattern.test(emailValue)) {
+    if (!emailPattern.test(emailValue)) { // Verifica se o email contém um formato válido
         emailInput.classList.add('error');
         emailError.textContent = 'Por favor, insira um endereço de e-mail válido.';
         emailError.classList.add('visible');
@@ -25,11 +27,14 @@ emailInput.addEventListener('blur', validateEmail);
 const nameInput = document.getElementById('name');
 const nameError = document.getElementById('name-error');
 
-function validateName() {
+function validateName() { // Valida o nome inserido pelo usuário
     const nameValue = nameInput.value.trim();
     const namePattern = /^[a-zA-ZÀ-ÿ\s]+$/;
+
+    // O nome deve conter apenas letras e espaços, sem números ou caracteres especiais
+    // O regex permite letras acentuadas e espaços entre os nomes
     
-    if (!namePattern.test(nameValue)) {
+    if (!namePattern.test(nameValue)) { // Verifica se o nome contém apenas letras e espaços
         nameInput.classList.add('error');
         nameError.textContent = 'Por favor, insira um nome válido.';
         nameError.classList.add('visible');
@@ -47,11 +52,13 @@ nameInput.addEventListener('blur', validateName);
 const usernameInput = document.getElementById('github');
 const usernameError = document.getElementById('github-error');
 
-function validateUsername() {
+function validateUsername() { // Valida o nome de usuário inserido pelo usuário
     const usernameValue = usernameInput.value.trim();
     const usernamePattern = /^[a-zA-Z0-9]+$/;
     
-    if (!usernamePattern.test(usernameValue)) {
+    // O nome de usuário deve conter apenas letras e números, sem espaços ou caracteres especiais
+
+    if (!usernamePattern.test(usernameValue)) { // Verifica se o nome de usuário contém apenas letras e números
         usernameInput.classList.add('error');
         usernameError.textContent = 'Por favor, insira um nome de usuário válido.';
         usernameError.classList.add('visible');
@@ -69,15 +76,17 @@ usernameInput.addEventListener('blur', validateUsername);
 const avatarInput = document.getElementById('avatar');
 const avatarError = document.getElementById('avatar-hint');
 
-function validateAvatar() {
+function validateAvatar() { // Valida o arquivo de imagem inserido pelo usuário
     const avatarFile = avatarInput.files[0];
 
+    // O arquivo deve ser uma imagem JPEG ou PNG e não pode exceder 2MB
+
     if (avatarFile) {
-        const fileType = ['image/jpeg', 'image/png'];
+        const fileType = ['image/jpeg', 'image/png']; // Tipos de arquivo permitidos
         const fileSize = avatarFile.size / 1024 / 1024; // Convertendo para MB
         const maxSize = 2; // 2MB
 
-        if (!fileType.includes(avatarFile.type)) {
+        if (!fileType.includes(avatarFile.type)) { // Verifica se o tipo de arquivo é permitido
             avatarInput.classList.add('error');
             avatarError.textContent = 'Por favor, insira uma imagem JPEG ou PNG.';
             avatarError.classList.add('visible');
@@ -100,24 +109,24 @@ const uploadBox = document.querySelector('.upload-box');
 const uploadText = document.querySelector('.upload-text');
 const uploadIcon = document.querySelector('.upload-icon');
 
-function handleUploadBoxClick() {
+function handleUploadBoxClick() { // Função para abrir o seletor de arquivos quando a área de upload é clicada
     if (!avatarInput.files || avatarInput.files.length === 0) {
         avatarInput.click();
     }
 };
 
-uploadBox.addEventListener('click', handleUploadBoxClick);
+uploadBox.addEventListener('click', handleUploadBoxClick); // Adiciona o evento de clique para abrir o seletor de arquivos
 
-uploadBox.addEventListener('dragover', function(event) {
+uploadBox.addEventListener('dragover', function(event) { // Permite o arrastar e soltar do arquivo
     event.preventDefault();
 });
 
-uploadBox.addEventListener('drop', function(event) {
+uploadBox.addEventListener('drop', function(event) { // Lida com o evento de soltar o arquivo na área de upload
     event.preventDefault();
     
     const files = event.dataTransfer.files;
 
-    if (files.length > 0) {
+    if (files.length > 0) { // Verifica se há arquivos arrastados
         const dataTransfer = new DataTransfer();
         dataTransfer.items.add(files[0]);
         avatarInput.files = dataTransfer.files;
@@ -126,7 +135,7 @@ uploadBox.addEventListener('drop', function(event) {
 
 // Atualizar visual da área de upload
 
-function removeImage() {
+function removeImage() { // Remove a imagem do preview e os botões de ação
     avatarInput.value = '';
     uploadIcon.innerHTML = '<img class="upload-icon-img" src="images/upload.png" alt="Upload Icon" width="40">';
     uploadText.style.display = 'block';
@@ -136,7 +145,7 @@ function removeImage() {
     uploadBox.addEventListener('click', handleUploadBoxClick);
 }
 
-function editImage() {
+function editImage() { // Permite ao usuário editar a imagem após o upload
     avatarInput.click();
 }
 
@@ -144,16 +153,16 @@ const actionsDiv = document.getElementById('upload-actions');
 const removeButton = actionsDiv.querySelector('.preview-button:nth-child(1)');
 const changeButton = actionsDiv.querySelector('.preview-button:nth-child(2)');
 
-avatarInput.addEventListener('change', function() {
+avatarInput.addEventListener('change', function() { // Lida com a mudança no input de arquivo
     const files = avatarInput.files;
     
-    if (files && files[0]) {
+    if (files && files[0]) { // Verifica se há arquivos selecionados
         const file = files[0];
         
-        if (file.type === 'image/jpeg' || file.type === 'image/png') {
+        if (file.type === 'image/jpeg' || file.type === 'image/png') { // Verifica se o arquivo é uma imagem JPEG ou PNG
             const reader = new FileReader();
             
-            reader.onload = function(e) {
+            reader.onload = function(e) { // Lê o arquivo e exibe a imagem no preview
                 uploadIcon.innerHTML = `<img src="${e.target.result}" alt="Preview" class="preview-image" width="40" height="40">`;
                 uploadText.style.display = 'none';
                 
@@ -164,11 +173,17 @@ avatarInput.addEventListener('change', function() {
             
             reader.readAsDataURL(file);
 
-            uploadBox.removeEventListener('click', handleUploadBoxClick);
+            uploadBox.removeEventListener('click', handleUploadBoxClick); // Remove o evento de clique para evitar abrir o seletor de arquivos novamente
             uploadBox.classList.add('active');
         }
     }
 });
 
-removeButton.addEventListener('click', removeImageHandler);
-changeButton.addEventListener('click', removeImageHandler);
+removeButton.addEventListener('click', function() { // Adiciona o evento de clique para remover a imagem;
+    e.preventDefault();
+    removeImage();
+});
+changeButton.addEventListener('click', function() { // Adiciona o evento de clique para editar a imagem;
+    e.preventDefault();
+    editImage();
+});
