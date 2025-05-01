@@ -313,13 +313,103 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-
-    background-color: var(--color002);
-    padding: 20px;
+    margin: 0 auto;
+    width: 25%;
 }
 
+.ticket-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color002);
+    border-radius: 10px;
+    padding: 20px;
+    width: 75%;
+    height: 156px;
+    border: 1px solid var(--color005);
+}
 
+.ticket-logo {
+    display: flex;  
+    justify-content: left;
+    align-items: center;
+    gap: .5rem;
+    font-family: var(--font002);
+    font-size: 1.5rem;
+}
+
+.logo-img {
+    display: flex;
+}
+
+.logo-img img {
+    width: 50px;
+}
+
+.ticket-logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.data-local {
+    color: var(--color008);
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+.ticket-body {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+#avatar-ticket {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid #757175;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.ticket-info p {
+    margin: 0;
+}
+
+#name-ticket {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+#github-ticket {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: .3rem;
+}
+
+#github-ticket span {
+    color: var(--color008);
+    font-size: .8rem;
+    font-weight: 300;
+}
+
+.ticket-code {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+    height: 156px;
+    background-color: var(--color002);
+    border-radius: 10px;
+    border: 1px solid var(--color005);
+}
+
+.ticket-code span {
+    font-family: var(--font002);
+    font-size: 1rem;
+    color: var(--color008);
+    transform: rotate(90deg);
+}
 
 /*Footer*/
 
