@@ -34,7 +34,7 @@ body {
     background-size: cover;
     color: white;
     width: 100%;
-    height: 100vh;
+    height: auto;
 }
 
 /*Header*/
@@ -97,7 +97,7 @@ main {
 /*Form*/
 
 .form-container {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -310,7 +310,7 @@ form {
 /*Ticket*/
 
 .ticket-container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
@@ -384,10 +384,16 @@ form {
     display: flex;
     justify-content: left;
     align-items: center;
-    gap: .3rem;
+}
+
+#github-ticket img {
+    margin-right: .3rem;
 }
 
 #github-ticket span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     color: var(--color008);
     font-size: .8rem;
     font-weight: 300;
@@ -409,6 +415,35 @@ form {
     font-size: 1rem;
     color: var(--color008);
     transform: rotate(90deg);
+}
+
+/*Download*/
+
+.download-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 25%;
+}
+
+.download-container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--color005);
+    color: white;
+    font-family: var(--font001);
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.download-container button:hover {
+    background-color: var(--color006);
 }
 
 /*Footer*/

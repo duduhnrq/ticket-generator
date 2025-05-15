@@ -203,12 +203,14 @@ generateButton.addEventListener('click', function(e) { // Adiciona o evento de c
     form.style.display = 'none'; // Esconde o formulário
 
     const ticketContainer = document.getElementById('ticket-container');
+    const downloadContainer = document.getElementById('download-container');
 
     ticketContainer.style.display = 'flex'; // Exibe o container do ticket
+    downloadContainer.style.display = 'flex'; // Exibe o container de download
 
     const avatarTicket = document.getElementById('avatar-ticket');
     const nameTicket = document.getElementById('name-ticket');
-    const usernameTicket = document.getElementById('github-ticket');
+    const usernameTicket = document.getElementById('username-ticket');
     const downloadButton = document.getElementById('download-btn');
 
     avatarTicket.src = URL.createObjectURL(avatarFile); // Cria um URL para o arquivo de imagem
